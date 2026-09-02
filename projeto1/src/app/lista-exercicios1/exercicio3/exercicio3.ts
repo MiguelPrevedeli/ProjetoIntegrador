@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
 export class Exercicio3 {
   imagemUrl = 'https://angular.io/assets/images/logos/angular/angular.svg';
 
-
+  
 }
