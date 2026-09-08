@@ -1,1 +1,20 @@
-<p>exercicio11 works!</p>
+<h2>Carrinho de Compras</h2>
+
+<h3>{{ produto }}</h3>
+
+<p>Preço: R$ {{ preco }},00</p>
+
+<p>
+    Quantidade:
+    <button (click)="diminuir()" [disabled]="quantidade === 1">-</button>
+    {{ quantidade }}
+    <button (click)="aumentar()">+</button>
+</p>
+
+<p>Total: R$ {{ preco * quantidade }},00</p>
+
+<button (click)="adicionar()">
+    Adicionar ao carrinho
+</button>
+
+<p>{{ mensagem }}</p>

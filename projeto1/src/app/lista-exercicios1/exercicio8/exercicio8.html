@@ -1,1 +1,24 @@
-<p>exercicio8 works!</p>
+<h2>Cadastro de Produto</h2>
+
+<label>Produto:</label>
+<input type="text" [(ngModel)]="produto">
+
+<br><br>
+
+<label>Preço:</label>
+<input type="number" [(ngModel)]="preco">
+
+<br><br>
+
+<label>Quantidade:</label>
+<input type="number" [(ngModel)]="quantidade">
+
+<h3>Resultado</h3>
+
+<p>Produto: {{ produto }}</p>
+
+<p>Preço: R$ {{preco}}</p>
+
+<p>Quantidade: {{ quantidade }}</p>
+
+<p>Total: R$ {{ total }}</p>

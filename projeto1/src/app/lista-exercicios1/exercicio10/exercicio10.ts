@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio10.html',
   styleUrl: './exercicio10.css',
 })
-export class Exercicio10 {}
+export class Exercicio10{
+  usuario = '';
+  senha = '';
+  mensagem = '';
+
+  entrar() {
+    this.mensagem = 'Bem-vindo, ' + this.usuario + '!';
+  }
+}

@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio8.html',
   styleUrl: './exercicio8.css',
 })
-export class Exercicio8 {}
+export class Exercicio8 {
+  produto = 'Mouse Gamer';
+  preco = 150;
+  quantidade = 2;
+
+  get total(): number {
+    return this.preco * this.quantidade;
+  }
+}

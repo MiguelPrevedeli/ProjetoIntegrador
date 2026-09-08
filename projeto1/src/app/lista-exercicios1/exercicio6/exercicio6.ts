@@ -6,4 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio6.html',
   styleUrl: './exercicio6.css',
 })
-export class Exercicio6 {}
+export class Exercicio6 {
+  quantidade: number = 0;
+
+  incrementar() {
+    this.quantidade++;
+  }
+
+  decrementar() {
+    if (this.quantidade > 0) {
+      this.quantidade--;
+    }
+  }
+}

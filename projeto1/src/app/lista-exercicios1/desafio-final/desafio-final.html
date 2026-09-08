@@ -1,1 +1,18 @@
-<p>desafio-final works!</p>
+<h2>Matrícula em Curso</h2>
+
+<label>Nome do aluno:</label>
+
+<input type="text" [(ngModel)]="nome">
+
+<p>Aluno: {{ nome }}</p>
+
+<p>
+    Disciplinas:
+    <button (click)="diminuir()" [disabled]="disciplinas === 1">-</button>
+    {{ disciplinas }}
+    <button (click)="aumentar()">+</button>
+</p>
+
+<button (click)="matricular()" [disabled]="nome === ''">Realizar Matrícula</button>
+
+<p>{{ mensagem }}</p>

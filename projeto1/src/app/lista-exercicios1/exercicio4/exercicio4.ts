@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio4.html',
   styleUrl: './exercicio4.css',
 })
-export class Exercicio4 {}
+export class Exercicio4 {  
+  formularioValido = false;
+}
