@@ -1,0 +1,19 @@
+
+
+.par {
+  background-color: rgb(117, 117, 117);
+}
+
+
+.impar {
+  background-color: rgb(248, 53, 53);
+}
+
+.primeiro {
+  font-weight: bold;
+  color: red;
+}
+
+.ultimo {
+  border: 3px solid purple;
+}

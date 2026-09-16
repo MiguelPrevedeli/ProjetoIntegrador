@@ -1,1 +1,37 @@
-<p>exercicio3 works!</p>
+<p>Idade: {{ idade }}</p>
+
+<button (click)="aumentarIdade()">
+  Aumentar idade
+</button>
+
+<button (click)="diminuirIdade()">
+  Diminuir idade
+</button>
+
+<hr>
+
+<p *ngIf="idade < 12; else verificaAdolescente">
+  Criança
+</p>
+
+<ng-template #verificaAdolescente>
+
+  <p *ngIf="idade < 18; else verificaAdulto">
+    Adolescente
+  </p>
+
+</ng-template>
+
+<ng-template #verificaAdulto>
+
+  <p *ngIf="idade < 60; else idoso">
+    Adulto
+  </p>
+
+</ng-template>
+
+<ng-template #idoso>
+
+  <p>Idoso</p>
+
+</ng-template>

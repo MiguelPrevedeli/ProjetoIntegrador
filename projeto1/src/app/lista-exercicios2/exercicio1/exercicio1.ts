@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio1.html',
   styleUrl: './exercicio1.css',
 })
-export class Exercicio1 {}
+export class Exercicio1 {
+    mensagemVisivel: boolean = false;
+}

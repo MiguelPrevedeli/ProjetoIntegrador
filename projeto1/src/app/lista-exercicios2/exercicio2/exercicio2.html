@@ -1,1 +1,11 @@
-<p>exercicio2 works!</p>
+<p *ngIf="usuarioLogado; else naoLogado">
+  Usuário autenticado
+</p>
+
+<ng-template #naoLogado>
+  <p>Acesso não autorizado</p>
+</ng-template>
+
+<button (click)="usuarioLogado = !usuarioLogado">
+  {{ usuarioLogado ? 'Sair' : 'Entrar' }}
+</button>

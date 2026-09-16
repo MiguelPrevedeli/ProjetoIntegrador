@@ -1,1 +1,19 @@
-<p>exercicio7 works!</p>
+<ul>
+  <li
+    *ngFor="let disciplina of disciplinas;
+            let i = index;
+            let par = even;
+            let impar = odd;
+            let primeiro = first;
+            let ultimo = last"
+    [ngClass]="{
+      'par': par,
+      'impar': impar,
+      'primeiro': primeiro,
+      'ultimo': ultimo
+    }">
+
+    {{ i + 1 }} - {{ disciplina }}
+
+  </li>
+</ul>

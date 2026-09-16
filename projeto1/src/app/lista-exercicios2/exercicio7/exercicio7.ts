@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './exercicio7.html',
   styleUrl: './exercicio7.css',
 })
-export class Exercicio7 {}
+export class Exercicio7 {
+   disciplinas = [
+    'Matemática',
+    'Português',
+    'História',
+    'Geografia',
+    'Inglês',
+    'Programação'
+  ];
+}

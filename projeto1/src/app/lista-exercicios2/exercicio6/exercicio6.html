@@ -1,1 +1,25 @@
-<p>exercicio6 works!</p>
+<p>Quantidade: {{ nomes.length }}</p>
+
+<button (click)="removerUltimo()">
+  Remover último
+</button>
+
+<button (click)="limparLista()">
+  Limpar lista
+</button>
+
+<button (click)="restaurarLista()">
+  Restaurar lista
+</button>
+
+<hr>
+
+<p *ngIf="nomes.length === 0">
+  Nenhum nome cadastrado
+</p>
+
+<ul>
+  <li *ngFor="let nome of nomes; let i = index">
+    {{ i + 1 }} - {{ nome }}
+  </li>
+</ul>
