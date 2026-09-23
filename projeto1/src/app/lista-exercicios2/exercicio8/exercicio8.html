@@ -1,1 +1,18 @@
-<p>exercicio8 works!</p>
+<h2>Lista de Produtos</h2>
+
+<div *ngFor="let produto of produtos; let i = index">
+
+  <p>Posição: {{ i + 1 }}</p>
+
+  <p>Nome: {{ produto.nome }}</p>
+
+  <p>Preço: {{ produto.preco | currency:'BRL' }}</p>
+
+  <p>Quantidade disponível: {{ produto.quantidade }}</p>
+
+  <p>
+    Valor total em estoque:
+    {{ produto.preco * produto.quantidade | currency:'BRL' }}
+  </p>
+
+</div>

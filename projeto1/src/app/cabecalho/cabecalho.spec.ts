@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Exercicio8 } from './exercicio8';
+import { Cabecalho } from './cabecalho';
 
-describe('Exercicio8', () => {
-  let component: Exercicio8;
-  let fixture: ComponentFixture<Exercicio8>;
+describe('Cabecalho', () => {
+  let component: Cabecalho;
+  let fixture: ComponentFixture<Cabecalho>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Exercicio8],
+      declarations: [Cabecalho],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Exercicio8);
+    fixture = TestBed.createComponent(Cabecalho);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
