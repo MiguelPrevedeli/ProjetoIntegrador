@@ -1,1 +1,92 @@
-<p>exercicio12 works!</p>
+<div>
+  <label for="nome">
+    Nome do produto:
+  </label>
+
+  <br>
+
+  <input
+    id="nome"
+    type="text"
+    [(ngModel)]="nomeProduto"
+  >
+
+  <br><br>
+
+  <label for="quantidade">
+    Quantidade:
+  </label>
+
+  <br>
+
+  <input
+    id="quantidade"
+    type="number"
+    min="0"
+    [(ngModel)]="quantidadeProduto"
+  >
+
+  <br><br>
+
+  <button (click)="cadastrar()">
+    Cadastrar
+  </button>
+
+</div>
+
+<br>
+
+<p
+  *ngIf="mensagem"
+  [ngClass]="{
+    'sucesso': mensagem === 'Produto cadastrado com sucesso!',
+    'erro': mensagem !== 'Produto cadastrado com sucesso!'
+  }"
+>
+  {{ mensagem }}
+</p>
+
+<hr>
+
+<h3>Lista de produtos</h3>
+
+<p *ngIf="produtos.length === 0">
+  Não existem produtos cadastrados.
+</p>
+
+<div *ngFor="let produto of produtos">
+
+  <p>
+    <strong>ID:</strong>
+    {{ produto.id }}
+  </p>
+
+  <p>
+    <strong>Nome:</strong>
+    {{ produto.nome }}
+  </p>
+
+  <p>
+    <strong>Quantidade:</strong>
+    {{ produto.quantidade }}
+  </p>
+
+  <button (click)="excluir(produto.id)">
+    Excluir
+  </button>
+
+  <hr>
+
+</div>
+
+<style>
+  .sucesso {
+    color: green;
+    font-weight: bold;
+  }
+
+  .erro {
+    color: red;
+    font-weight: bold;
+  }
+</style>

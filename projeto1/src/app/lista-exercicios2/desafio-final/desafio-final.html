@@ -1,0 +1,129 @@
+<h2>Painel de Projetos Integradores</h2>
+
+
+<p>
+  <strong>Total de projetos:</strong>
+  {{ quantidadeTotal() }}
+</p>
+
+<p>
+  <strong>Projetos concluídos:</strong>
+  {{ quantidadeConcluidos() }}
+</p>
+
+<button (click)="alternarConcluidos()">
+  {{ mostrarConcluidos
+    ? 'Ocultar projetos concluídos'
+    : 'Mostrar projetos concluídos'
+  }}
+</button>
+
+<hr>
+
+
+@for (projeto of projetos; track projeto.id) {
+
+  @if (mostrarConcluidos || projeto.status !== 'concluído') {
+
+    <div
+      [ngClass]="{
+        'status-planejamento': projeto.status === 'planejamento',
+        'status-desenvolvimento': projeto.status === 'desenvolvimento',
+        'status-testes': projeto.status === 'testes',
+        'status-concluido': projeto.status === 'concluído',
+        'nota-alta': projeto.nota !== null && projeto.nota >= 7,
+        'nota-baixa': projeto.nota !== null && projeto.nota < 6
+      }"
+    >
+
+
+      <h3>
+        Projeto {{ $index + 1 }}
+      </h3>
+
+   
+      <p>
+        <strong>Título:</strong>
+        {{ projeto.titulo }}
+      </p>
+
+   
+      <p>
+        <strong>Equipe:</strong>
+        {{ projeto.equipe }}
+      </p>
+
+
+      <p>
+        <strong>Nota:</strong>
+
+        @if (projeto.nota === null) {
+
+          <span>
+            Nota ainda não definida
+          </span>
+
+        } @else {
+
+          <span>
+            {{ projeto.nota }}
+          </span>
+
+        }
+
+      </p>
+
+      <p>
+        <strong>Status:</strong>
+        {{ projeto.status }}
+      </p>
+
+
+
+      @if (projeto.entregue) {
+
+        <p class="entregue">
+          Projeto entregue
+        </p>
+
+      }
+
+
+     
+      @if (projeto.nota !== null && projeto.nota >= 7) {
+
+        <p class="nota-alta-texto">
+          Projeto com nota igual ou superior a 7.
+        </p>
+
+      }
+
+
+      <!-- Sinalização de nota baixa -->
+      @if (projeto.nota !== null && projeto.nota < 6) {
+
+        <p class="nota-baixa-texto">
+          Atenção: projeto com nota inferior a 6.
+        </p>
+
+      }
+
+
+      <!-- Alterar status -->
+      <button (click)="alterarStatus(projeto)">
+        Alterar status
+      </button>
+
+    </div>
+
+    <hr>
+
+  }
+
+} @empty {
+
+  <p class="lista-vazia">
+    Não existem projetos cadastrados.
+  </p>
+
+}

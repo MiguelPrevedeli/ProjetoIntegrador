@@ -1,1 +1,103 @@
-<p>exercicio13 works!</p>
+<div>
+
+  <p>
+    <strong>Total de tarefas:</strong>
+    {{ tarefas.length }}
+  </p>
+
+  <p>
+    <strong>Tarefas concluídas:</strong>
+    {{ quantidadeConcluidas() }}
+  </p>
+
+  <p>
+    <strong>Tarefas pendentes:</strong>
+    {{ quantidadePendentes() }}
+  </p>
+
+</div>
+
+<hr>
+
+<p *ngIf="tarefas.length === 0">
+  Não existem tarefas.
+</p>
+
+<div *ngFor="let tarefa of tarefas">
+
+  <div
+    [ngClass]="{
+      'prioridade-baixa': tarefa.prioridade === 'baixa',
+      'prioridade-media': tarefa.prioridade === 'media',
+      'prioridade-alta': tarefa.prioridade === 'alta',
+      'tarefa-concluida': tarefa.concluida
+    }"
+  >
+
+    <h3>{{ tarefa.titulo }}</h3>
+
+    <p>
+      <strong>Responsável:</strong>
+      {{ tarefa.responsavel }}
+    </p>
+
+    <p>
+      <strong>Prioridade:</strong>
+      {{ tarefa.prioridade }}
+    </p>
+
+    <p>
+
+      <strong>Situação:</strong>
+
+      <span *ngIf="tarefa.concluida">
+        Concluída
+      </span>
+
+      <span *ngIf="!tarefa.concluida">
+        Pendente
+      </span>
+
+    </p>
+
+    <button
+      (click)="alterarSituacao(tarefa)"
+    >
+      {{ tarefa.concluida
+        ? 'Marcar como pendente'
+        : 'Concluir tarefa'
+      }}
+    </button>
+
+  </div>
+
+  <hr>
+
+</div>
+
+<style>
+
+  .prioridade-baixa {
+    border-left: 5px solid green;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .prioridade-media {
+    border-left: 5px solid orange;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .prioridade-alta {
+    border-left: 5px solid red;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tarefa-concluida {
+    background-color: #e8f5e9;
+    opacity: 0.7;
+  }
+
+</style>

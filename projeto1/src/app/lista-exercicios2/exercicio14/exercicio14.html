@@ -1,1 +1,109 @@
-<p>exercicio14 works!</p>
+
+<h3>Exercício 1</h3>
+
+<button (click)="alterarMensagem()">
+  {{ mensagemVisivel ? 'Ocultar mensagem' : 'Mostrar mensagem' }}
+</button>
+
+<br><br>
+
+@if (mensagemVisivel) {
+
+  <p>
+    Bem-vindo ao sistema
+  </p>
+
+}
+
+
+<hr>
+
+
+<h3>Exercício 2 </h3>
+
+@if (usuarioLogado) {
+
+  <p>
+    Usuário autenticado
+  </p>
+
+} @else {
+
+  <p>
+    Acesso não autorizado
+  </p>
+
+}
+
+<button (click)="alterarLogin()">
+  {{ usuarioLogado ? 'Sair' : 'Entrar' }}
+</button>
+
+
+<hr>
+
+<h3>Exercício 3</h3>
+
+<p>
+  <strong>Idade:</strong> {{ idade }}
+</p>
+
+@if (idade < 12) {
+
+  <p>
+    Criança
+  </p>
+
+} @else if (idade >= 12 && idade <= 17) {
+
+  <p>
+    Adolescente
+  </p>
+
+} @else if (idade >= 18 && idade <= 59) {
+
+  <p>
+    Adulto
+  </p>
+
+} @else {
+
+  <p>
+    Idoso
+  </p>
+
+}
+
+<br>
+
+<button (click)="aumentarIdade()">
+  Aumentar idade
+</button>
+
+<button
+  (click)="diminuirIdade()"
+  [disabled]="idade === 0"
+>
+  Diminuir idade
+</button>
+
+
+<hr>
+
+
+
+<h3>Lista de produtos usando for</h3>
+
+@for (produto of produtos; track produto) {
+
+  <p>
+    {{ produto }}
+  </p>
+
+} @empty {
+
+  <p>
+    Nenhum produto cadastrado.
+  </p>
+
+}

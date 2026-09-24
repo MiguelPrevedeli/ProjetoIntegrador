@@ -1,0 +1,55 @@
+.status-planejamento {
+    border-left: 6px solid #2196f3;
+    background-color: #e3f2fd;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .status-desenvolvimento {
+    border-left: 6px solid #ff9800;
+    background-color: #fff3e0;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .status-testes {
+    border-left: 6px solid #9c27b0;
+    background-color: #f3e5f5;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .status-concluido {
+    border-left: 6px solid #4caf50;
+    background-color: #e8f5e9;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .entregue {
+    color: green;
+    font-weight: bold;
+  }
+
+  .nota-alta {
+    box-shadow: 0 0 8px green;
+  }
+
+  .nota-baixa {
+    box-shadow: 0 0 8px red;
+  }
+
+  .nota-alta-texto {
+    color: green;
+    font-weight: bold;
+  }
+
+  .nota-baixa-texto {
+    color: red;
+    font-weight: bold;
+  }
+
+  .lista-vazia {
+    color: #777;
+    font-weight: bold;
+  }

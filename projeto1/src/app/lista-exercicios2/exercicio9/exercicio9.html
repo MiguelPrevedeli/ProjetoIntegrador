@@ -1,0 +1,39 @@
+<div *ngFor="let produto of produtos">
+
+  <h3>{{ produto.nome }}</h3>
+
+  <p>
+    Quantidade:
+    {{ produto.quantidade }}
+  </p>
+
+  <p
+    [ngClass]="{
+      'vermelho': produto.quantidade === 0,
+      'amarelo': produto.quantidade >= 1 && produto.quantidade <= 5,
+      'verde': produto.quantidade > 5
+    }"
+  >
+    {{ classificarEstoque(produto.quantidade) }}
+  </p>
+
+  <hr>
+
+</div>
+
+<style>
+  .vermelho {
+    color: red;
+    font-weight: bold;
+  }
+
+  .amarelo {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .verde {
+    color: green;
+    font-weight: bold;
+  }
+</style>
